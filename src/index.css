@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.starry-night {
+  background: black;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+}
+
+.star {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.star:nth-child(odd) {
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+.star:nth-child(even) {
+  animation: twinkle 3s infinite ease-in-out;
+}
